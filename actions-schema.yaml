@@ -28,29 +28,44 @@ components:
       properties:
         pedido:
           type: string
+          description: Número do pedido.
         data_pedido:
           type: string
+          format: date
+          description: Data do pedido.
         pedido_externo:
           type: string
+          description: Número do pedido externo.
         pedido_cliente:
           type: string
+          description: Número do pedido do cliente.
         tipo_pedido:
           type: string
+          description: Tipo do pedido.
         filial:
           type: string
+          description: Filial do pedido.
         canal:
           type: string
+          description: Canal de venda do pedido.
         cod_cliente:
           type: string
+          description: Código do cliente.
         transportadora:
           type: string
+          description: Transportadora responsável pela entrega.
         moeda:
           type: string
+          description: Moeda do pedido.
         tot_valor_original:
           type: number
+          description: Valor original do pedido.
         tot_valor_entregue:
           type: number
+          description: Valor total entregue.
         tot_valor_cancelado:
           type: number
+          description: Valor total cancelado.
         desconto:
           type: number
+          description: Valor total de desconto aplicado.
