@@ -34,7 +34,7 @@ import requests
 
 def get_total_vendas(year=2023):
     try:
-        response = requests.get(f"http://localhost:8000/vendas_total")
+        response = requests.get(f"https://dw-api-project-7q49kae88-keuvin-baumgartel.vercel.app/vendas_total")
         response.raise_for_status()
         data = response.json()
         return f"Total de vendas em {year}: R$ {data['total_vendas']:.2f} com {data['total_pedidos']} pedidos."
