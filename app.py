@@ -32,8 +32,8 @@ async def get_pedidos():
     try:
         db: Session = get_db_session()
         pedidos = db.query(Pedido).limit(50).all()
-        db.close()  # Fechando a sessão para evitar problemas
+        db.close()
         return pedidos
     except Exception as e:
-        db.close()  # Garante que a sessão seja fechada mesmo com erro
+        db.close()
         raise HTTPException(status_code=500, detail=str(e))
