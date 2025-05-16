@@ -4,7 +4,7 @@ info:
   description: API para consultar pedidos do Data Warehouse.
   version: 1.0.0
 servers:
-  - url: http://localhost:8000
+  - url: https://keuvinbaumgartel.github.io/DW_API_Project
 paths:
   /pedidos:
     get:
