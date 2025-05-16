@@ -21,48 +21,6 @@ paths:
                   $ref: '#/components/schemas/Pedido'
         '500':
           description: Erro ao buscar pedidos.
-  /pedidos/{pedido}:
-    get:
-      operationId: getPedidoById
-      summary: Retorna um pedido específico pelo ID.
-      parameters:
-        - name: pedido
-          in: path
-          required: true
-          description: ID do pedido.
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Detalhes do pedido.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Pedido'
-        '404':
-          description: Pedido não encontrado.
-        '500':
-          description: Erro ao buscar pedido.
-  /vendas_total:
-    get:
-      operationId: getTotalVendas
-      summary: Retorna o total de vendas em 2023.
-      responses:
-        '200':
-          description: Total de vendas em 2023.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  total_pedidos:
-                    type: integer
-                  total_vendas:
-                    type: number
-        '404':
-          description: Nenhuma venda encontrada para 2023.
-        '500':
-          description: Erro ao buscar total de vendas.
 components:
   schemas:
     Pedido:
@@ -72,7 +30,6 @@ components:
           type: string
         data_pedido:
           type: string
-          format: date
         pedido_externo:
           type: string
         pedido_cliente:
@@ -89,66 +46,11 @@ components:
           type: string
         moeda:
           type: string
-        cod_tab_preco:
-          type: string
-        colecao_pedido:
-          type: string
-        cod_representante:
-          type: string
-        cod_gerente:
-          type: string
-        natureza_saida:
-          type: string
-        aprovacao:
-          type: string
-        digitador:
-          type: string
-        pedido_embarcado:
-          type: string
-        data_ult_faturamento:
-          type: string
-          format: date
-        origem_pedido:
-          type: string
-        comissao_gerente:
-          type: number
-        tot_qtde_original:
-          type: integer
-        tot_qtde_entregue:
-          type: integer
-        tot_qtde_cancelada:
-          type: integer
-        tot_qtde_entregar:
-          type: integer
         tot_valor_original:
           type: number
         tot_valor_entregue:
           type: number
         tot_valor_cancelado:
           type: number
-        tot_valor_entregar:
-          type: number
-        tot_bruto_entregue:
-          type: number
-        valor_sub_itens:
-          type: number
         desconto:
-          type: number
-        valor_desconto:
-          type: number
-        desconto_bonificacao:
-          type: number
-        desconto_digitado:
-          type: number
-        desconto_extra:
-          type: number
-        desconto_showroom_fisico:
-          type: number
-        desconto_showroom_virtual:
-          type: number
-        desconto_ltv:
-          type: number
-        desconto_calculado:
-          type: number
-        desconto_total:
           type: number
