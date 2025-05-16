@@ -1,0 +1,51 @@
+# models.py
+from sqlalchemy import Column, BigInteger, String, Float, TIMESTAMP
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
+class Pedido(Base):
+    __tablename__ = "dim_pedidos"
+    __table_args__ = {"schema": "varejo"}  # Define o esquema explicitamente
+
+    pedido = Column(String, primary_key=True)
+    data_pedido = Column(TIMESTAMP, nullable=True)
+    pedido_externo = Column(String, nullable=True)
+    pedido_cliente = Column(String, nullable=True)
+    tipo_pedido = Column(String, nullable=True)
+    filial = Column(String, nullable=True)
+    canal = Column(String, nullable=True)
+    cod_cliente = Column(String, nullable=True)
+    transportadora = Column(String, nullable=True)
+    moeda = Column(String, nullable=True)
+    cod_tab_preco = Column(String, nullable=True)
+    colecao_pedido = Column(String, nullable=True)
+    cod_representante = Column(String, nullable=True)
+    cod_gerente = Column(String, nullable=True)
+    natureza_saida = Column(String, nullable=True)
+    aprovacao = Column(String, nullable=True)
+    digitador = Column(String, nullable=True)
+    pedido_embarcado = Column(String, nullable=True)
+    data_ult_faturamento = Column(TIMESTAMP, nullable=True)
+    origem_pedido = Column(String, nullable=True)
+    comissao_gerente = Column(Float, nullable=True)
+    tot_qtde_original = Column(BigInteger, nullable=True)
+    tot_qtde_entregue = Column(BigInteger, nullable=True)
+    tot_qtde_cancelada = Column(BigInteger, nullable=True)
+    tot_qtde_entregar = Column(BigInteger, nullable=True)
+    tot_valor_original = Column(Float, nullable=True)
+    tot_valor_entregue = Column(Float, nullable=True)
+    tot_valor_cancelado = Column(Float, nullable=True)
+    tot_valor_entregar = Column(Float, nullable=True)
+    tot_bruto_entregue = Column(Float, nullable=True)
+    valor_sub_itens = Column(Float, nullable=True)
+    desconto = Column(Float, nullable=True)
+    valor_desconto = Column(Float, nullable=True)
+    desconto_bonificacao = Column(Float, nullable=True)
+    desconto_digitado = Column(Float, nullable=True)
+    desconto_extra = Column(Float, nullable=True)
+    desconto_showroom_fisico = Column(Float, nullable=True)
+    desconto_showroom_virtual = Column(Float, nullable=True)
+    desconto_ltv = Column(Float, nullable=True)
+    desconto_calculado = Column(Float, nullable=True)
+    desconto_total = Column(Float, nullable=True)
