@@ -4,7 +4,7 @@ info:
   description: API para consultar pedidos do Data Warehouse.
   version: 1.0.0
 servers:
-  - url: https://keuvinbaumgartel.github.io/DW_API_Project
+  - url: https://dw-api-project.vercel.app/
 paths:
   /pedidos:
     get:
